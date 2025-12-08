@@ -2,16 +2,19 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { MapPin, Users, TrendingUp, Shield } from "lucide-react";
+import { MapPin, Users, TrendingUp, Shield, Grid3X3 } from "lucide-react";
+
+// DEV MODE: Set to true to show coordinate grid for flag positioning
+const SHOW_DEV_GRID = true;
 
 const countries = [
-  { code: "RU", name: "Russia", flag: "🇷🇺", position: { top: "22%", left: "78%" }, duration: "2019-2022", insight: "Massive 144M market, complex regulations, high technical bar. Users value depth and precision over simplicity." },
-  { code: "UA", name: "Ukraine", flag: "🇺🇦", position: { top: "38%", left: "62%" }, duration: "2019-2022", insight: "44M population, exceptional engineering talent pool. Strong tech community before current challenges." },
-  { code: "PL", name: "Poland", flag: "🇵🇱", position: { top: "34%", left: "50%" }, duration: "15+ years", insight: "Home market. 38M people. Deep understanding of local business culture, startup ecosystem, and regulatory landscape." },
+  { code: "RU", name: "Russia", flag: "🇷🇺", position: { top: "30%", left: "90%" }, duration: "2019-2022", insight: "Massive 144M market, complex regulations, high technical bar. Users value depth and precision over simplicity." },
+  { code: "UA", name: "Ukraine", flag: "🇺🇦", position: { top: "55%", left: "85%" }, duration: "2019-2022", insight: "44M population, exceptional engineering talent pool. Strong tech community before current challenges." },
+  { code: "PL", name: "Poland", flag: "🇵🇱", position: { top: "55%", left: "60%" }, duration: "15+ years", insight: "Home market. 38M people. Deep understanding of local business culture, startup ecosystem, and regulatory landscape." },
   { code: "RO", name: "Romania", flag: "🇷🇴", position: { top: "50%", left: "58%" }, duration: "2019-present", insight: "19M population with strong IT sector. Successfully navigated different language and cultural expectations." },
-  { code: "CZ", name: "Czechia", flag: "🇨🇿", position: { top: "38%", left: "44%" }, duration: "2020-present", insight: "10.5M population. Growing tech scene, Prague emerging as major CEE tech and startup hub." },
+  { code: "CZ", name: "Czechia", flag: "🇨🇿", position: { top: "61%", left: "53%" }, duration: "2020-present", insight: "10.5M population. Growing tech scene, Prague emerging as major CEE tech and startup hub." },
   { code: "HU", name: "Hungary", flag: "🇭🇺", position: { top: "46%", left: "50%" }, duration: "2020-present", insight: "10M population. Budapest tech scene growing rapidly, strong academic and research tradition." },
-  { code: "BY", name: "Belarus", flag: "🇧🇾", position: { top: "28%", left: "58%" }, duration: "2019-2022", insight: "9.4M population. Known for world-class developers and strong technical education system." },
+  { code: "BY", name: "Belarus", flag: "🇧🇾", position: { top: "45%", left: "75%" }, duration: "2019-2022", insight: "9.4M population. Known for world-class developers and strong technical education system." },
   { code: "BG", name: "Bulgaria", flag: "🇧🇬", position: { top: "58%", left: "56%" }, duration: "2019-present", insight: "6.9M population. Emerging tech hub with hungry, skilled developers and competitive costs." },
   { code: "SK", name: "Slovakia", flag: "🇸🇰", position: { top: "42%", left: "48%" }, duration: "2020-present", insight: "5.4M population. Industrial powerhouse transitioning to tech, strong Bratislava startup scene." },
   { code: "MD", name: "Moldova", flag: "🇲🇩", position: { top: "46%", left: "62%" }, duration: "2021-present", insight: "2.6M population. Small but eager market, high AI adoption potential among young professionals." },
@@ -65,12 +68,42 @@ export function EasternEurope() {
           >
             {/* Map background */}
             <div className="absolute inset-0 bg-gradient-to-br from-muted/50 to-muted rounded-3xl overflow-hidden">
-              {/* Europe map image */}
+              {/* Europe map image - aligned right */}
               <img
                 src="/europe-map.svg"
                 alt="Map of Europe"
-                className="absolute inset-0 w-full h-full object-contain opacity-40"
+                className="absolute inset-0 w-full h-full object-cover object-right opacity-40"
               />
+
+              {/* DEV: Coordinate grid overlay for positioning flags */}
+              {SHOW_DEV_GRID && (
+                <div className="absolute inset-0 pointer-events-none z-30">
+                  {/* Vertical lines (left percentages) */}
+                  {[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map((pct) => (
+                    <div
+                      key={`v-${pct}`}
+                      className="absolute top-0 bottom-0 w-px bg-red-500/30"
+                      style={{ left: `${pct}%` }}
+                    >
+                      <span className="absolute top-0 -translate-x-1/2 text-[10px] text-red-600 font-mono bg-white/80 px-0.5">
+                        {pct}
+                      </span>
+                    </div>
+                  ))}
+                  {/* Horizontal lines (top percentages) */}
+                  {[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map((pct) => (
+                    <div
+                      key={`h-${pct}`}
+                      className="absolute left-0 right-0 h-px bg-blue-500/30"
+                      style={{ top: `${pct}%` }}
+                    >
+                      <span className="absolute left-0 -translate-y-1/2 text-[10px] text-blue-600 font-mono bg-white/80 px-0.5">
+                        {pct}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              )}
 
               {/* Country dots */}
               {countries.map((country, index) => (
