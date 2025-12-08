@@ -18,7 +18,9 @@ export default function Home() {
             Kamil Grabowski
           </div>
           <a
-            href="mailto:kamil@royalco.io"
+            href="https://calendar.app.google/xYRrCojKoJ3Ret1P6"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-sm font-medium bg-primary text-primary-foreground px-4 py-2 rounded-full hover:bg-primary/90 transition-colors"
           >
             Get in Touch
