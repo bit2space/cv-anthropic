@@ -5,21 +5,23 @@ import { useRef, useState } from "react";
 import { MapPin, Users, TrendingUp, Shield } from "lucide-react";
 
 const countries = [
-  { code: "PL", name: "Poland", flag: "🇵🇱", position: { top: "36%", left: "50%" }, duration: "15+ years", insight: "Home market. Deep understanding of local business culture, startup ecosystem, and regulatory environment." },
-  { code: "RO", name: "Romania", flag: "🇷🇴", position: { top: "52%", left: "56%" }, duration: "2019-present", insight: "Successfully navigated different language and cultural expectations. Strong engineering talent." },
-  { code: "BG", name: "Bulgaria", flag: "🇧🇬", position: { top: "60%", left: "54%" }, duration: "2019-present", insight: "Emerging tech hub with hungry, skilled developers." },
-  { code: "RU", name: "Russia", flag: "🇷🇺", position: { top: "28%", left: "72%" }, duration: "2019-2022", insight: "Massive market, complex regulations, high technical bar. Users value depth over simplicity." },
-  { code: "DE", name: "Germany", flag: "🇩🇪", position: { top: "42%", left: "38%" }, duration: "2019-present", insight: "Precision-oriented market. Quality and privacy paramount." },
-  { code: "NL", name: "Netherlands", flag: "🇳🇱", position: { top: "36%", left: "32%" }, duration: "2020-present", insight: "International, English-friendly, innovative mindset." },
-  { code: "CZ", name: "Czech Republic", flag: "🇨🇿", position: { top: "44%", left: "44%" }, duration: "2020-present", insight: "Growing tech scene, Prague emerging as CEE tech hub." },
-  { code: "SI", name: "Slovenia", flag: "🇸🇮", position: { top: "52%", left: "44%" }, duration: "2020-present", insight: "Small but highly developed market, gateway to Balkans." },
+  { code: "RU", name: "Russia", flag: "🇷🇺", position: { top: "22%", left: "78%" }, duration: "2019-2022", insight: "Massive 144M market, complex regulations, high technical bar. Users value depth and precision over simplicity." },
+  { code: "UA", name: "Ukraine", flag: "🇺🇦", position: { top: "38%", left: "62%" }, duration: "2019-2022", insight: "44M population, exceptional engineering talent pool. Strong tech community before current challenges." },
+  { code: "PL", name: "Poland", flag: "🇵🇱", position: { top: "34%", left: "50%" }, duration: "15+ years", insight: "Home market. 38M people. Deep understanding of local business culture, startup ecosystem, and regulatory landscape." },
+  { code: "RO", name: "Romania", flag: "🇷🇴", position: { top: "50%", left: "58%" }, duration: "2019-present", insight: "19M population with strong IT sector. Successfully navigated different language and cultural expectations." },
+  { code: "CZ", name: "Czechia", flag: "🇨🇿", position: { top: "38%", left: "44%" }, duration: "2020-present", insight: "10.5M population. Growing tech scene, Prague emerging as major CEE tech and startup hub." },
+  { code: "HU", name: "Hungary", flag: "🇭🇺", position: { top: "46%", left: "50%" }, duration: "2020-present", insight: "10M population. Budapest tech scene growing rapidly, strong academic and research tradition." },
+  { code: "BY", name: "Belarus", flag: "🇧🇾", position: { top: "28%", left: "58%" }, duration: "2019-2022", insight: "9.4M population. Known for world-class developers and strong technical education system." },
+  { code: "BG", name: "Bulgaria", flag: "🇧🇬", position: { top: "58%", left: "56%" }, duration: "2019-present", insight: "6.9M population. Emerging tech hub with hungry, skilled developers and competitive costs." },
+  { code: "SK", name: "Slovakia", flag: "🇸🇰", position: { top: "42%", left: "48%" }, duration: "2020-present", insight: "5.4M population. Industrial powerhouse transitioning to tech, strong Bratislava startup scene." },
+  { code: "MD", name: "Moldova", flag: "🇲🇩", position: { top: "46%", left: "62%" }, duration: "2021-present", insight: "2.6M population. Small but eager market, high AI adoption potential among young professionals." },
 ];
 
 const marketData = [
   { icon: Users, value: "300M+", label: "People in the region", description: "Growing tech-savvy population hungry for AI tools" },
   { icon: TrendingUp, value: "15%+", label: "Annual AI adoption growth", description: "Fastest growing AI market in Europe" },
   { icon: Shield, value: "Low", label: "AI tool penetration", description: "First-mover advantage available" },
-  { icon: MapPin, value: "8+", label: "Markets I've launched in", description: "Proven playbook for regional expansion" },
+  { icon: MapPin, value: "10", label: "Markets I've launched in", description: "Proven playbook for regional expansion" },
 ];
 
 export function EasternEurope() {
