@@ -1,0 +1,456 @@
+{
+  "project": "Landing Page CV - Anthropic Application",
+  "description": "Interactive landing page CV for Kamil Grabowski's application to Anthropic, focusing on Eastern Europe expansion opportunity",
+  "meta": "CV created entirely with Claude - demonstrating product understanding while showcasing value proposition",
+  "status": "MVP Complete",
+  "features": [
+    {
+      "id": "project-setup",
+      "name": "Next.js Project Setup & Configuration",
+      "description": "Initialize Next.js 14 with App Router, configure TypeScript, ESLint, and project structure",
+      "status": "done",
+      "passes": true,
+      "files": [
+        "app/package.json",
+        "app/tsconfig.json",
+        "app/next.config.ts"
+      ],
+      "notes": "Next.js 14 with App Router, TypeScript 5, ESLint configured"
+    },
+    {
+      "id": "design-system",
+      "name": "Custom Design System with OKLCH Colors",
+      "description": "Implement Anthropic-inspired warm color palette using modern OKLCH color space, custom CSS variables, and Tailwind v4 configuration",
+      "status": "done",
+      "passes": true,
+      "files": [
+        "app/src/app/globals.css"
+      ],
+      "notes": "Terracotta, Coral, Navy, Cream, Sage color palette with light/dark mode support"
+    },
+    {
+      "id": "typography-system",
+      "name": "Custom Typography with Google Fonts",
+      "description": "Configure and load Outfit (headlines), Source Serif 4 (body), and Geist Mono (code) fonts with optimized loading",
+      "status": "done",
+      "passes": true,
+      "files": [
+        "app/src/app/layout.tsx",
+        "app/src/app/globals.css"
+      ],
+      "notes": "Font variable configuration with display swap for performance"
+    },
+    {
+      "id": "seo-metadata",
+      "name": "SEO Metadata & Open Graph",
+      "description": "Configure comprehensive SEO metadata including title, description, keywords, Open Graph, and Twitter cards",
+      "status": "done",
+      "passes": true,
+      "files": [
+        "app/src/app/layout.tsx"
+      ],
+      "notes": "Title: 'Eastern Europe is Ready for Claude', targeted keywords for Anthropic application"
+    },
+    {
+      "id": "animations-framer",
+      "name": "Framer Motion Animation System",
+      "description": "Install and configure Framer Motion for smooth animations, scroll-triggered effects, and interactive elements",
+      "status": "done",
+      "passes": true,
+      "files": [
+        "app/package.json"
+      ],
+      "notes": "Framer Motion 12.23.25 with custom animations in components"
+    },
+    {
+      "id": "hero-section",
+      "name": "Hero Section with Animated Headline",
+      "description": "Build hero section with gradient headline, animated badge, stats (15+ years, 8 countries, 16M users), CTAs, and scroll indicator",
+      "status": "done",
+      "passes": true,
+      "files": [
+        "app/src/components/sections/Hero.tsx"
+      ],
+      "notes": "Fade-up animations, pulsing 'Built with Claude' badge, dual CTAs (email + LinkedIn), decorative background"
+    },
+    {
+      "id": "navigation",
+      "name": "Fixed Navigation Bar",
+      "description": "Implement fixed navigation with name badge and CTA button with backdrop blur effect",
+      "status": "done",
+      "passes": true,
+      "files": [
+        "app/src/app/page.tsx"
+      ],
+      "notes": "Fixed position, backdrop blur, responsive design"
+    },
+    {
+      "id": "why-anthropic-section",
+      "name": "Why Anthropic Narrative Section",
+      "description": "Create 3-part narrative section explaining alignment with Anthropic's mission, values, and vision",
+      "status": "done",
+      "passes": true,
+      "files": [
+        "app/src/components/sections/WhyAnthropic.tsx"
+      ],
+      "notes": "Scroll-triggered animations, narrative cards with icons"
+    },
+    {
+      "id": "eastern-europe-map",
+      "name": "Interactive Eastern Europe Map",
+      "description": "Build interactive map with 8 country dots (Poland, Romania, Bulgaria, Russia, Germany, Netherlands, Czech Republic, Slovenia), hover effects, and country info cards",
+      "status": "done",
+      "passes": true,
+      "files": [
+        "app/src/components/sections/EasternEurope.tsx"
+      ],
+      "notes": "Flag emojis, animated dots with pulse effect, hover/click interactions, country insights, market data cards"
+    },
+    {
+      "id": "market-data-cards",
+      "name": "Market Data Statistics Cards",
+      "description": "Display 4 market data cards: 300M+ people, 15%+ AI adoption growth, Low AI penetration, 8+ markets launched",
+      "status": "done",
+      "passes": true,
+      "files": [
+        "app/src/components/sections/EasternEurope.tsx"
+      ],
+      "notes": "Grid layout, icon integration (Lucide), hover effects"
+    },
+    {
+      "id": "cultural-insights",
+      "name": "Cultural Insights Panel",
+      "description": "Educational panel showing key Eastern European cultural insights (learning styles, communication, trust building, pricing)",
+      "status": "done",
+      "passes": true,
+      "files": [
+        "app/src/components/sections/EasternEurope.tsx"
+      ],
+      "notes": "Gradient background, 4-column grid on desktop"
+    },
+    {
+      "id": "track-record-section",
+      "name": "Track Record Project Case Studies",
+      "description": "Build 4 expandable project cards: Kinguin, Building Companion, SAP XRM Integration, Skinwallet with metrics and achievements",
+      "status": "done",
+      "passes": true,
+      "files": [
+        "app/src/components/sections/TrackRecord.tsx"
+      ],
+      "notes": "Expand/collapse functionality, project metrics, challenge-solution-impact format"
+    },
+    {
+      "id": "skills-section",
+      "name": "Skills Matrix with 4 Categories",
+      "description": "Interactive skills section with 4 categories: Product Strategy, Technical, Cross-functional, Market Expertise - expandable cards",
+      "status": "done",
+      "passes": true,
+      "files": [
+        "app/src/components/sections/Skills.tsx"
+      ],
+      "notes": "Click-to-expand functionality, organized by skill type"
+    },
+    {
+      "id": "claude-effect-section",
+      "name": "Claude Effect Personal Story",
+      "description": "Personal narrative section showing transformation journey with Claude, including before/after comparisons and specific transformations",
+      "status": "done",
+      "passes": true,
+      "files": [
+        "app/src/components/sections/ClaudeEffect.tsx",
+        "my_claude_story.md"
+      ],
+      "notes": "Staggered reveal animations, transformation cards, personal story integration"
+    },
+    {
+      "id": "contact-section",
+      "name": "Contact Section with CTAs",
+      "description": "Contact section with email, phone, LinkedIn links and primary CTA buttons",
+      "status": "done",
+      "passes": true,
+      "files": [
+        "app/src/components/sections/Contact.tsx"
+      ],
+      "notes": "Fade-in animations, contact methods with icons, dual CTAs"
+    },
+    {
+      "id": "component-barrel-exports",
+      "name": "Component Barrel Exports",
+      "description": "Create index.ts for clean component imports across sections",
+      "status": "done",
+      "passes": true,
+      "files": [
+        "app/src/components/sections/index.ts"
+      ],
+      "notes": "Exports all 7 section components"
+    },
+    {
+      "id": "responsive-design",
+      "name": "Responsive Design Implementation",
+      "description": "Ensure all sections are fully responsive across mobile, tablet, and desktop breakpoints",
+      "status": "done",
+      "passes": true,
+      "files": [
+        "app/src/app/globals.css",
+        "app/src/components/sections/*.tsx"
+      ],
+      "notes": "Tailwind breakpoints (sm, md, lg), grid layouts adapt, mobile-first approach"
+    },
+    {
+      "id": "custom-animations",
+      "name": "Custom CSS Animations",
+      "description": "Implement custom fadeIn, fadeUp, fadeDown keyframe animations and noise texture overlay",
+      "status": "done",
+      "passes": true,
+      "files": [
+        "app/src/app/globals.css"
+      ],
+      "notes": "Utility classes for animations, SVG noise texture for depth"
+    },
+    {
+      "id": "scrollbar-styling",
+      "name": "Custom Scrollbar Styling",
+      "description": "Style webkit scrollbar to match design system",
+      "status": "done",
+      "passes": true,
+      "files": [
+        "app/src/app/globals.css"
+      ],
+      "notes": "Custom colors matching muted/foreground palette"
+    },
+    {
+      "id": "lucide-icons",
+      "name": "Lucide Icon Integration",
+      "description": "Install and integrate Lucide React icons throughout the application",
+      "status": "done",
+      "passes": true,
+      "files": [
+        "app/package.json"
+      ],
+      "notes": "Icons: Mail, Linkedin, ArrowDown, MapPin, Users, TrendingUp, Shield, etc."
+    },
+    {
+      "id": "shadcn-setup",
+      "name": "shadcn/ui Component Library Setup",
+      "description": "Configure shadcn/ui base components (Button, Card via Radix primitives)",
+      "status": "done",
+      "passes": true,
+      "files": [
+        "app/package.json"
+      ],
+      "notes": "Radix UI primitives, CVA for variants, clsx/tailwind-merge utilities"
+    },
+    {
+      "id": "build-verification",
+      "name": "Production Build Verification",
+      "description": "Verify that Next.js build completes successfully without errors",
+      "status": "done",
+      "passes": true,
+      "files": [],
+      "notes": "npm run build passes successfully"
+    },
+    {
+      "id": "dev-server-setup",
+      "name": "Development Server Configuration",
+      "description": "Configure dev server to run on localhost:3000 with hot reload",
+      "status": "done",
+      "passes": true,
+      "files": [
+        "app/package.json"
+      ],
+      "notes": "npm run dev works at http://localhost:3000"
+    },
+    {
+      "id": "content-writing",
+      "name": "Content Writing & Copy",
+      "description": "Write compelling copy for all sections: headlines, body text, case studies, personal story",
+      "status": "done",
+      "passes": true,
+      "files": [
+        "my_claude_story.md",
+        "CONTENT_STRATEGY.md"
+      ],
+      "notes": "All content written and integrated into components"
+    },
+    {
+      "id": "page-integration",
+      "name": "Main Page Integration",
+      "description": "Wire all sections together in main page.tsx with proper ordering and navigation",
+      "status": "done",
+      "passes": true,
+      "files": [
+        "app/src/app/page.tsx"
+      ],
+      "notes": "All 7 sections integrated in logical flow"
+    },
+    {
+      "id": "smooth-scroll",
+      "name": "Smooth Scroll Behavior",
+      "description": "Enable smooth scrolling across the page for better UX",
+      "status": "done",
+      "passes": true,
+      "files": [
+        "app/src/app/layout.tsx",
+        "app/src/app/globals.css"
+      ],
+      "notes": "scroll-smooth class on html element"
+    },
+    {
+      "id": "professional-photo",
+      "name": "Add Professional Photo",
+      "description": "Add professional headshot photo to assets/photo/ and integrate into Hero or About section",
+      "status": "pending",
+      "passes": null,
+      "files": [
+        "assets/photo/"
+      ],
+      "notes": "Optional polish - would enhance visual appeal in Hero section"
+    },
+    {
+      "id": "company-logos",
+      "name": "Add Company Logos",
+      "description": "Add logos for Kinguin, Building Companion, SAP, Skinwallet, Royal Company to assets/logos/ and integrate into Track Record section",
+      "status": "pending",
+      "passes": null,
+      "files": [
+        "assets/logos/"
+      ],
+      "notes": "Optional polish - would make project cards more visually appealing"
+    },
+    {
+      "id": "certificate-images",
+      "name": "Add Certificate Images",
+      "description": "Add certificate/credential images to assets/certificates/ if relevant to showcase in Skills section",
+      "status": "pending",
+      "passes": null,
+      "files": [
+        "assets/certificates/"
+      ],
+      "notes": "Optional - could be added to Skills section as visual proof"
+    },
+    {
+      "id": "fact-verification",
+      "name": "Verify All Facts and Numbers",
+      "description": "Double-check all statistics, dates, and numbers across the site before publication: 15+ years, 8 countries, 16M users, 300M+ market, etc.",
+      "status": "pending",
+      "passes": null,
+      "files": [
+        "verified_facts.md"
+      ],
+      "notes": "Critical before launch - ensure accuracy of all claims"
+    },
+    {
+      "id": "map-position-tuning",
+      "name": "Fine-tune Country Flag Positions on Map",
+      "description": "Adjust flag positioning on Eastern Europe map for better visual accuracy and balance",
+      "status": "pending",
+      "passes": null,
+      "files": [
+        "app/src/components/sections/EasternEurope.tsx"
+      ],
+      "notes": "Optional polish - current positions are functional but could be refined"
+    },
+    {
+      "id": "vercel-deployment",
+      "name": "Deploy to Vercel Production",
+      "description": "Deploy the application to Vercel production environment using vercel --prod command",
+      "status": "done",
+      "passes": true,
+      "files": [],
+      "notes": "Deployed 2025-12-08. Preview: https://app-6j0pkg5jy-kamilroyalcoios-projects.vercel.app",
+      "completed_at": "2025-12-08"
+    },
+    {
+      "id": "custom-domain",
+      "name": "Custom Domain Setup",
+      "description": "Optional: Configure custom domain (e.g., kamil-for-anthropic.com) and point to Vercel deployment",
+      "status": "done",
+      "passes": true,
+      "files": [],
+      "notes": "Domain: grabenzo.com - configured 2025-12-08",
+      "completed_at": "2025-12-08"
+    },
+    {
+      "id": "og-image",
+      "name": "Generate Open Graph Preview Image",
+      "description": "Create custom OG image for better social media sharing previews",
+      "status": "pending",
+      "passes": null,
+      "files": [
+        "app/public/og-image.png"
+      ],
+      "notes": "Would improve link previews when shared on LinkedIn, Twitter, etc."
+    },
+    {
+      "id": "favicon",
+      "name": "Custom Favicon",
+      "description": "Add custom favicon.ico or app icons for browser tab branding",
+      "status": "pending",
+      "passes": null,
+      "files": [
+        "app/public/favicon.ico"
+      ],
+      "notes": "Small touch that adds professionalism"
+    },
+    {
+      "id": "analytics-setup",
+      "name": "Analytics Integration (Optional)",
+      "description": "Consider adding Vercel Analytics or Google Analytics to track engagement",
+      "status": "pending",
+      "passes": null,
+      "files": [],
+      "notes": "Could provide insights on how Anthropic team engages with the CV"
+    },
+    {
+      "id": "accessibility-audit",
+      "name": "Accessibility Review",
+      "description": "Run accessibility audit to ensure WCAG compliance (color contrast, keyboard navigation, ARIA labels)",
+      "status": "pending",
+      "passes": null,
+      "files": [],
+      "notes": "Good practice - ensures the CV is accessible to all"
+    },
+    {
+      "id": "performance-optimization",
+      "name": "Performance Optimization Check",
+      "description": "Run Lighthouse audit and optimize Core Web Vitals (LCP, FID, CLS)",
+      "status": "pending",
+      "passes": null,
+      "files": [],
+      "notes": "Next.js already optimized, but worth verifying scores are high"
+    },
+    {
+      "id": "final-review",
+      "name": "Final Content & Design Review",
+      "description": "Complete walkthrough of entire site on mobile and desktop, check for typos, alignment issues, broken animations",
+      "status": "pending",
+      "passes": null,
+      "files": [],
+      "notes": "Last step before deployment - fresh eyes review"
+    }
+  ],
+  "summary": {
+    "total": 39,
+    "done": 28,
+    "pending": 11,
+    "completion_percentage": 72,
+    "mvp_complete": true,
+    "deployed": true,
+    "deployment_url": "https://grabenzo.com"
+  },
+  "tech_stack": {
+    "framework": "Next.js 14 (App Router)",
+    "styling": "Tailwind CSS v4",
+    "animations": "Framer Motion",
+    "components": "shadcn/ui (Radix UI primitives)",
+    "icons": "Lucide React",
+    "fonts": {
+      "headlines": "Outfit",
+      "body": "Source Serif 4",
+      "code": "Geist Mono"
+    },
+    "language": "TypeScript 5",
+    "hosting": "Vercel (ready)"
+  },
+  "created_at": "2025-12-08"
+}

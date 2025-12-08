@@ -1,0 +1,179 @@
+"use client";
+
+import { motion, useInView } from "framer-motion";
+import { useRef, useState } from "react";
+import { MapPin, Users, TrendingUp, Shield } from "lucide-react";
+
+const countries = [
+  { code: "PL", name: "Poland", flag: "🇵🇱", position: { top: "36%", left: "50%" }, duration: "15+ years", insight: "Home market. Deep understanding of local business culture, startup ecosystem, and regulatory environment." },
+  { code: "RO", name: "Romania", flag: "🇷🇴", position: { top: "52%", left: "56%" }, duration: "2019-present", insight: "Successfully navigated different language and cultural expectations. Strong engineering talent." },
+  { code: "BG", name: "Bulgaria", flag: "🇧🇬", position: { top: "60%", left: "54%" }, duration: "2019-present", insight: "Emerging tech hub with hungry, skilled developers." },
+  { code: "RU", name: "Russia", flag: "🇷🇺", position: { top: "28%", left: "72%" }, duration: "2019-2022", insight: "Massive market, complex regulations, high technical bar. Users value depth over simplicity." },
+  { code: "DE", name: "Germany", flag: "🇩🇪", position: { top: "42%", left: "38%" }, duration: "2019-present", insight: "Precision-oriented market. Quality and privacy paramount." },
+  { code: "NL", name: "Netherlands", flag: "🇳🇱", position: { top: "36%", left: "32%" }, duration: "2020-present", insight: "International, English-friendly, innovative mindset." },
+  { code: "CZ", name: "Czech Republic", flag: "🇨🇿", position: { top: "44%", left: "44%" }, duration: "2020-present", insight: "Growing tech scene, Prague emerging as CEE tech hub." },
+  { code: "SI", name: "Slovenia", flag: "🇸🇮", position: { top: "52%", left: "44%" }, duration: "2020-present", insight: "Small but highly developed market, gateway to Balkans." },
+];
+
+const marketData = [
+  { icon: Users, value: "300M+", label: "People in the region", description: "Growing tech-savvy population hungry for AI tools" },
+  { icon: TrendingUp, value: "15%+", label: "Annual AI adoption growth", description: "Fastest growing AI market in Europe" },
+  { icon: Shield, value: "Low", label: "AI tool penetration", description: "First-mover advantage available" },
+  { icon: MapPin, value: "8+", label: "Markets I've launched in", description: "Proven playbook for regional expansion" },
+];
+
+export function EasternEurope() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [activeCountry, setActiveCountry] = useState<typeof countries[0] | null>(null);
+
+  return (
+    <section ref={ref} className="py-24 md:py-32 relative overflow-hidden bg-secondary/20">
+      <div className="max-w-7xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7 }}
+          className="text-center mb-16"
+        >
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <div className="h-px w-12 bg-primary" />
+            <span className="text-primary font-medium text-sm uppercase tracking-widest">
+              The Opportunity
+            </span>
+            <div className="h-px w-12 bg-primary" />
+          </div>
+
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+            Why Eastern Europe? Why Now?
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-serif">
+            A region of 300 million people, rapidly adopting technology,
+            underserved by AI tools that understand their context.
+          </p>
+        </motion.div>
+
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Interactive Map */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="relative aspect-square max-w-lg mx-auto lg:mx-0"
+          >
+            {/* Map background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-muted/50 to-muted rounded-3xl overflow-hidden">
+              {/* Europe map image */}
+              <img
+                src="/europe-map.svg"
+                alt="Map of Europe"
+                className="absolute inset-0 w-full h-full object-contain opacity-40"
+              />
+
+              {/* Country dots */}
+              {countries.map((country, index) => (
+                <motion.button
+                  key={country.code}
+                  initial={{ scale: 0 }}
+                  animate={isInView ? { scale: 1 } : {}}
+                  transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
+                  className={`absolute transform -translate-x-1/2 -translate-y-1/2 z-10 group cursor-pointer ${
+                    activeCountry?.code === country.code ? "z-20" : ""
+                  }`}
+                  style={{ top: country.position.top, left: country.position.left }}
+                  onClick={() => setActiveCountry(activeCountry?.code === country.code ? null : country)}
+                  onMouseEnter={() => setActiveCountry(country)}
+                  onMouseLeave={() => setActiveCountry(null)}
+                >
+                  <div
+                    className={`w-10 h-10 rounded-full flex items-center justify-center text-lg transition-all duration-300 ${
+                      activeCountry?.code === country.code
+                        ? "bg-primary text-primary-foreground scale-125 shadow-lg shadow-primary/30"
+                        : "bg-card text-foreground hover:bg-primary/20 hover:scale-110"
+                    }`}
+                  >
+                    {country.flag}
+                  </div>
+
+                  {/* Pulse effect */}
+                  <div className="absolute inset-0 rounded-full bg-primary/30 animate-ping" />
+                </motion.button>
+              ))}
+            </div>
+
+            {/* Country info card */}
+            {activeCountry && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="absolute bottom-4 left-4 right-4 bg-card p-4 rounded-xl shadow-xl border"
+              >
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="text-2xl">{activeCountry.flag}</span>
+                  <div>
+                    <h4 className="font-bold text-lg">{activeCountry.name}</h4>
+                    <p className="text-sm text-muted-foreground">{activeCountry.duration}</p>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground font-serif">{activeCountry.insight}</p>
+              </motion.div>
+            )}
+          </motion.div>
+
+          {/* Market data cards */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="grid grid-cols-2 gap-4"
+          >
+            {marketData.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                className="p-6 rounded-2xl bg-card border hover:border-primary/50 transition-colors group"
+              >
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                  <item.icon className="w-5 h-5 text-primary" />
+                </div>
+                <div className="text-3xl font-bold text-primary mb-1">{item.value}</div>
+                <div className="font-medium text-sm mb-2">{item.label}</div>
+                <div className="text-sm text-muted-foreground font-serif">{item.description}</div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Key insights */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="mt-16 p-8 rounded-3xl bg-gradient-to-r from-primary/10 via-primary/5 to-accent/10 border"
+        >
+          <h3 className="text-xl font-bold mb-4">Cultural Insights That Matter</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-sm">
+            <div>
+              <div className="font-semibold mb-1">Learning Styles</div>
+              <div className="text-muted-foreground font-serif">Eastern Europeans value depth and technical precision</div>
+            </div>
+            <div>
+              <div className="font-semibold mb-1">Communication</div>
+              <div className="text-muted-foreground font-serif">Direct communication, technical credibility matters</div>
+            </div>
+            <div>
+              <div className="font-semibold mb-1">Trust Building</div>
+              <div className="text-muted-foreground font-serif">Word-of-mouth and community over advertising</div>
+            </div>
+            <div>
+              <div className="font-semibold mb-1">Pricing</div>
+              <div className="text-muted-foreground font-serif">Value perception balanced with accessibility</div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
