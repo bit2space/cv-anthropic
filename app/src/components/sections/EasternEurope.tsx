@@ -5,19 +5,19 @@ import { useRef, useState } from "react";
 import { MapPin, Users, TrendingUp, Shield, Grid3X3 } from "lucide-react";
 
 // DEV MODE: Set to true to show coordinate grid for flag positioning
-const SHOW_DEV_GRID = true;
+const SHOW_DEV_GRID = false;
 
 const countries = [
   { code: "RU", name: "Russia", flag: "🇷🇺", position: { top: "30%", left: "90%" }, duration: "2019-2022", insight: "Massive 144M market, complex regulations, high technical bar. Users value depth and precision over simplicity." },
   { code: "UA", name: "Ukraine", flag: "🇺🇦", position: { top: "55%", left: "85%" }, duration: "2019-2022", insight: "44M population, exceptional engineering talent pool. Strong tech community before current challenges." },
-  { code: "PL", name: "Poland", flag: "🇵🇱", position: { top: "55%", left: "60%" }, duration: "15+ years", insight: "Home market. 38M people. Deep understanding of local business culture, startup ecosystem, and regulatory landscape." },
-  { code: "RO", name: "Romania", flag: "🇷🇴", position: { top: "50%", left: "58%" }, duration: "2019-present", insight: "19M population with strong IT sector. Successfully navigated different language and cultural expectations." },
+  { code: "PL", name: "Poland", flag: "🇵🇱", position: { top: "52%", left: "60%" }, duration: "15+ years", insight: "Home market. 38M people. Deep understanding of local business culture, startup ecosystem, and regulatory landscape." },
+  { code: "RO", name: "Romania", flag: "🇷🇴", position: { top: "70%", left: "72%" }, duration: "2019-present", insight: "19M population with strong IT sector. Successfully navigated different language and cultural expectations." },
   { code: "CZ", name: "Czechia", flag: "🇨🇿", position: { top: "61%", left: "53%" }, duration: "2020-present", insight: "10.5M population. Growing tech scene, Prague emerging as major CEE tech and startup hub." },
-  { code: "HU", name: "Hungary", flag: "🇭🇺", position: { top: "46%", left: "50%" }, duration: "2020-present", insight: "10M population. Budapest tech scene growing rapidly, strong academic and research tradition." },
+  { code: "HU", name: "Hungary", flag: "🇭🇺", position: { top: "69%", left: "60%" }, duration: "2020-present", insight: "10M population. Budapest tech scene growing rapidly, strong academic and research tradition." },
   { code: "BY", name: "Belarus", flag: "🇧🇾", position: { top: "45%", left: "75%" }, duration: "2019-2022", insight: "9.4M population. Known for world-class developers and strong technical education system." },
-  { code: "BG", name: "Bulgaria", flag: "🇧🇬", position: { top: "58%", left: "56%" }, duration: "2019-present", insight: "6.9M population. Emerging tech hub with hungry, skilled developers and competitive costs." },
-  { code: "SK", name: "Slovakia", flag: "🇸🇰", position: { top: "42%", left: "48%" }, duration: "2020-present", insight: "5.4M population. Industrial powerhouse transitioning to tech, strong Bratislava startup scene." },
-  { code: "MD", name: "Moldova", flag: "🇲🇩", position: { top: "46%", left: "62%" }, duration: "2021-present", insight: "2.6M population. Small but eager market, high AI adoption potential among young professionals." },
+  { code: "BG", name: "Bulgaria", flag: "🇧🇬", position: { top: "80%", left: "75%" }, duration: "2019-present", insight: "6.9M population. Emerging tech hub with hungry, skilled developers and competitive costs." },
+  { code: "SK", name: "Slovakia", flag: "🇸🇰", position: { top: "62%", left: "64%" }, duration: "2020-present", insight: "5.4M population. Industrial powerhouse transitioning to tech, strong Bratislava startup scene." },
+  { code: "MD", name: "Moldova", flag: "🇲🇩", position: { top: "64%", left: "80%" }, duration: "2021-present", insight: "2.6M population. Small but eager market, high AI adoption potential among young professionals." },
 ];
 
 const marketData = [
