@@ -95,7 +95,7 @@ export function Hero() {
         >
           {[
             { value: "15+", label: "Years Experience" },
-            { value: "8", label: "Countries Launched" },
+            { value: "10", label: "Countries Launched" },
             { value: "16M", label: "Users Scaled" },
           ].map((stat, index) => (
             <div key={index} className="text-center">

@@ -22,7 +22,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Kamil Grabowski | Eastern Europe is Ready for Claude",
   description:
-    "Product Manager with 15+ years experience launching products across 8 countries. Ready to bring Claude to Eastern Europe.",
+    "Product Manager with 15+ years experience launching products across 10 countries. Ready to bring Claude to Eastern Europe.",
   keywords: [
     "Kamil Grabowski",
     "Product Manager",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Kamil Grabowski | Eastern Europe is Ready for Claude",
     description:
-      "Product Manager with 15+ years experience. Ready to bring Claude to Eastern Europe.",
+      "Product Manager with 15+ years experience across 10 countries. Ready to bring Claude to Eastern Europe.",
     type: "website",
     locale: "en_US",
   },
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Kamil Grabowski | Eastern Europe is Ready for Claude",
     description:
-      "Product Manager with 15+ years experience. Ready to bring Claude to Eastern Europe.",
+      "Product Manager with 15+ years experience across 10 countries. Ready to bring Claude to Eastern Europe.",
   },
 };
 
