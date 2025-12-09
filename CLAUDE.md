@@ -32,45 +32,67 @@ npm run build  # Production build
 
 ```
 /Users/kamil/Projects/CV/
-├── CLAUDE.md                 # This file
-├── my_claude_story.md        # Personal Claude story (done)
-├── PROJECT_PLAN.md           # Original planning
-├── CONTENT_STRATEGY.md       # Content details
-├── assets/                   # Images, logos (to add)
-└── app/                      # Next.js application
+├── CLAUDE.md                 # Project instructions (this file)
+├── features.json             # Feature tracking (29/39 done, 74%)
+├── PROGRESS.md               # Current progress tracking
+├── TODO.md                   # Legacy todo list
+├── assets/                   # Media assets
+│   ├── certificates/         # Certificate images (empty - optional)
+│   ├── logos/                # Company logos (empty - optional)
+│   ├── photo/                # Professional photos (has content)
+│   └── screenshots/          # Screenshots (empty)
+├── docs/                     # Documentation
+│   └── session-notes.md      # Development session notes
+└── app/                      # Next.js 14 application
+    ├── package.json          # Dependencies & scripts
+    ├── tsconfig.json         # TypeScript configuration
+    ├── components.json       # shadcn/ui configuration
+    ├── README.md             # App-specific readme
     └── src/
         ├── app/
-        │   ├── page.tsx      # Main page
-        │   ├── layout.tsx    # Root layout with fonts
-        │   └── globals.css   # Design system
-        └── components/
-            └── sections/     # All page sections
-                ├── Hero.tsx
-                ├── WhyAnthropic.tsx
-                ├── EasternEurope.tsx
-                ├── TrackRecord.tsx
-                ├── Skills.tsx
-                ├── ClaudeEffect.tsx
-                └── Contact.tsx
+        │   ├── page.tsx      # Main landing page
+        │   ├── layout.tsx    # Root layout with fonts & metadata
+        │   └── globals.css   # Design system (colors, typography, animations)
+        ├── components/
+        │   ├── sections/     # Page sections (7 components)
+        │   │   ├── Hero.tsx
+        │   │   ├── WhyAnthropic.tsx
+        │   │   ├── EasternEurope.tsx
+        │   │   ├── TrackRecord.tsx
+        │   │   ├── Skills.tsx
+        │   │   ├── ClaudeEffect.tsx
+        │   │   ├── Contact.tsx
+        │   │   └── index.ts  # Barrel exports
+        │   └── ui/           # shadcn/ui components
+        │       ├── button.tsx
+        │       └── card.tsx
+        └── lib/
+            └── utils.ts      # Utility functions (cn, etc.)
 ```
 
 ## Content Status
 
 ### Completed
-- [x] Claude Effect story (my_claude_story.md)
-- [x] Hero section with animated headline
-- [x] Why Anthropic narrative
-- [x] Eastern Europe interactive map
+- [x] All 7 sections built and integrated
+- [x] Hero section with animated headline & stats
+- [x] Why Anthropic narrative (3-part story)
+- [x] Eastern Europe interactive map (10 countries, flags positioned)
 - [x] 4 project case studies (Kinguin, Building Companion, SAP XRM, Skinwallet)
-- [x] Skills matrix (4 categories)
+- [x] Skills matrix (4 categories, expandable)
+- [x] Claude Effect personal story & transformations
 - [x] Contact section with CTAs
+- [x] **Deployed**: https://grabenzo.com
+- [x] Custom domain configured
 
-### Still Needed (optional polish)
-- [ ] Professional photo in assets/photo/
-- [ ] Company logos in assets/logos/
-- [ ] Certificate images in assets/certificates/
-- [ ] verified_facts.md (verify numbers before publishing)
-- [ ] Custom domain setup
+### Optional Polish (not required for launch)
+- [ ] Company logos in Track Record cards (assets/logos/)
+- [ ] Certificate images in Skills section (assets/certificates/)
+- [ ] Fact verification document (verify all numbers/stats)
+- [ ] Open Graph custom image (og-image.png)
+- [ ] Custom favicon/app icons
+- [ ] Analytics integration (track engagement)
+- [ ] Accessibility audit (WCAG compliance)
+- [ ] Performance optimization check (Lighthouse)
 
 ## Design System
 
@@ -97,13 +119,26 @@ npm run build  # Production build
 | Claude Effect | Personal story + transformations | Staggered reveal |
 | Contact | Email, phone, LinkedIn, CTAs | Fade in |
 
-## Next Steps
+## Current Status & Next Steps
 
-1. **Review in browser**: `npm run dev` → http://localhost:3000
-2. **Add assets**: Photos, logos for more visual polish
-3. **Verify facts**: Double-check all numbers
-4. **Deploy**: `vercel --prod` when ready
-5. **Custom domain**: Optional (kamil-for-anthropic.com or similar)
+**MVP is complete and deployed** at https://grabenzo.com
+
+### For Local Development
+```bash
+cd app
+npm run dev    # http://localhost:3000
+npm run build  # Verify production build
+```
+
+### Optional Enhancements
+1. **Fact check**: Verify all statistics and numbers are accurate
+2. **Visual polish**: Add company logos to Track Record section
+3. **SEO boost**: Create custom OG image for better social sharing
+4. **Quality checks**: Run accessibility & performance audits
+5. **Analytics**: Add tracking to see engagement metrics
+
+### Ready to Submit
+The CV is live and ready to share with Anthropic. All core content is complete.
 
 ## Deploy Commands
 
